@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.MainActivity">
+
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Get Data -> Insert DB"
+        />
+
+    <Button
+        android:id="@+id/btnShowData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="print single data"
+         />
+
+    <Button
+        android:id="@+id/btnInnerShowData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="print inner join data"
+        android:layout_toRightOf="@+id/btnShowData"
+        />
+
+    <Button
+        android:id="@+id/btnClear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/btn"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="clean DB"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:padding="5dp"
+        android:layout_below="@+id/btnShowData"
+        tools:listitem="@layout/item_list"
+        />
+
+</RelativeLayout>

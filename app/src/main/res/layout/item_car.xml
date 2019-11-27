@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="2dp">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        >
+
+        <TextView
+            android:id="@+id/txtIdCar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginEnd="5dp"
+            android:textColor="@android:color/holo_blue_dark"
+            android:text="1"/>
+
+        <TextView
+            android:id="@+id/txtNameCar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:text="Ivan"/>
+
+        <TextView
+            android:id="@+id/txtModelCar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginStart="5dp"
+            android:text="Hdez"/>
+
+        <TextView
+            android:id="@+id/txtYearCar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginStart="5dp"
+            android:textColor="@android:color/holo_red_light"
+            android:text="gamis214@gmail.com"/>
+
+    </LinearLayout>
+
+</LinearLayout>

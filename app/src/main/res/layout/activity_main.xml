@@ -46,13 +46,22 @@
         android:text="clean DB"
         />
 
+    <Button
+        android:id="@+id/btnInsertUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnShowData"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="insertUser"
+        />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
         android:padding="5dp"
-        android:layout_below="@+id/btnShowData"
+        android:layout_below="@+id/btnInsertUser"
         tools:listitem="@layout/item_list"
         />
 

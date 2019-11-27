@@ -23,6 +23,9 @@ public interface UserDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     Completable insertUsers(List<User> lstUsers);
 
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    Completable insertOneUser(User user);
+
     @Query("SELECT * FROM user_table")
     Maybe<List<User>> getAllUsers();
 

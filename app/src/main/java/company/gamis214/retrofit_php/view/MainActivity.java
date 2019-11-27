@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import company.gamis214.retrofit_php.R;
 import company.gamis214.retrofit_php.adatpters.CustomAdapter;
@@ -38,7 +39,7 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btn,btnShowData,btnClear,btnInnerShowData;
+    private Button btn,btnShowData,btnClear,btnInnerShowData,btnInsertUser;
     private RecyclerView recyclerView;
     private CustomAdapter customAdapter;
     private static final int GET_USERS = 0, GET_USER_CARS=1;
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         btnShowData  = findViewById(R.id.btnShowData);
         btnInnerShowData  = findViewById(R.id.btnInnerShowData);
         btnClear = findViewById(R.id.btnClear);
+        btnInsertUser = findViewById(R.id.btnInsertUser);
         recyclerView = findViewById(R.id.recyclerView);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,6 +76,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 showInnerJoinData();
+            }
+        });
+        btnInsertUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                insertUser();
             }
         });
     }
@@ -231,6 +239,31 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onComplete() {
 
+                    }
+                }
+        );
+    }
+
+    private void insertUser(){
+        int number = new Random().nextInt(20);
+        UsersDataBase.getInstance(this).getUserDao().insertOneUser(
+                new User(number,"Test.No->"+number,"LastName->"+number,"email->"+number)
+        ).subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(
+                new CompletableObserver() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        showDataFromDB();
+                        Toast.makeText(MainActivity.this, "INSERT CORRECT", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        e.printStackTrace();
                     }
                 }
         );
